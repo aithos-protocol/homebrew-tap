@@ -3,34 +3,34 @@
 # Homebrew is the convenient way in, not the checkable one. Before trusting a
 # binary that will hold your signing keys:
 #
-#     gh release download --repo aithos-protocol/registry v0.1.0-alpha.1
+#     gh release download --repo aithos-protocol/registry v0.2.0
 #     gh attestation verify aithos-*.tar.gz --repo aithos-protocol/registry
 #
 class Aithos < Formula
   desc "Publish and verify signed A2A Agent Cards"
   homepage "https://github.com/aithos-protocol/registry"
-  version "0.1.0-alpha.1"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/aithos-protocol/registry/releases/download/v0.1.0-alpha.1/aithos-0.1.0-alpha.1-aarch64-apple-darwin.tar.gz"
-      sha256 "4680be888ba67736effb7cab0a34195eb82041882b50d4463aeac7a8f7aca717"
+      url "https://github.com/aithos-protocol/registry/releases/download/v0.2.0/aithos-0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "7663f887be9c88fee62ed59379bd36800b0ffdd8195be793c9881d4f68627be8"
     end
     on_intel do
-      url "https://github.com/aithos-protocol/registry/releases/download/v0.1.0-alpha.1/aithos-0.1.0-alpha.1-x86_64-apple-darwin.tar.gz"
-      sha256 "48b80ad31dbd6854fcd2ba0c53d2ad0328f338d2466e7b28a00299621d4020f8"
+      url "https://github.com/aithos-protocol/registry/releases/download/v0.2.0/aithos-0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "03cb68d203887046799e1f7fe16ce373e496378922d476ae7e92e4b83aa92183"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/aithos-protocol/registry/releases/download/v0.1.0-alpha.1/aithos-0.1.0-alpha.1-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "35175b7056ef448ac474111a0956f4642cd968c626d6c1242b159574cac6dafd"
+      url "https://github.com/aithos-protocol/registry/releases/download/v0.2.0/aithos-0.2.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "32cdfd38e372566a9c273eb15286fa091915b5121675e5f0231f2ef2c789cc9b"
     end
     on_intel do
-      url "https://github.com/aithos-protocol/registry/releases/download/v0.1.0-alpha.1/aithos-0.1.0-alpha.1-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "235af14734e9693735edba3d80c97ec49bde871252661fb1cce2c8ed22f34a88"
+      url "https://github.com/aithos-protocol/registry/releases/download/v0.2.0/aithos-0.2.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "685f74b1312a84f7e3a05bedc3bc84c74af04acec353edccc6955ae705b14a76"
     end
   end
 
@@ -39,7 +39,7 @@ class Aithos < Formula
   end
 
   test do
-    assert_match "0.1.0-alpha.1", shell_output("#{bin}/aithos --version")
+    assert_match "0.2.0", shell_output("#{bin}/aithos --version")
 
     # A published entry this formula does not control, verified end to end:
     # if the strict parser, the canonicalizer or the JWS profile were broken by
